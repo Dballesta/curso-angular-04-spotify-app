@@ -1,1 +1,32 @@
-<p>home works!</p>
+<div class="card-columns">
+  <div *ngFor="let item of newRealeases" class="card">
+    <img class="card-img-top" [src]="item.images[1].url" alt="Card image cap" />
+    <div class="card-body">
+      <h5 class="card-title">{{ item.name }}</h5>
+      <p><span *ngFor="let artist of item.artists" class="badge badge-secondary">{{artist.name}}</span></p>
+      <p class="card-text">
+        <a href="{{ item.external_urls.spotify }}" target="_blank"
+          >Ve al {{ item.album_type }} {{ item.name }}</a
+        >
+      </p>
+      <p class="card-text">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Petición simple HTTP GET
+<div class="container">
+  <div class="row">
+    <h1>HOME</h1>
+  </div>
+  <div class="row">
+    <ul>
+      <li *ngFor="let pais of paises">
+        <img src="{{pais.flag}}" height="50px" width="50px" class="img-fluid" alt="{{pais.name}} flag">
+        {{pais.name}}
+      </li>
+    </ul>
+  </div>
+</div> -->
