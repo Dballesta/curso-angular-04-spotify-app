@@ -15,6 +15,12 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SearchComponent } from './components/search/search.component';
 
 import { SpotifyService } from './services/spotify.service';
+import { NoimagePipe } from './pipes/noimage.pipe';
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faSync } from '@fortawesome/free-solid-svg-icons';
 
 
 //Importamos las rutas
@@ -25,16 +31,24 @@ import { SpotifyService } from './services/spotify.service';
     HomeComponent,
     ArtistaComponent,
     NavbarComponent,
-    SearchComponent
+    SearchComponent,
+    NoimagePipe,
+    TarjetasComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(ROUTES, { useHash: true })
+    RouterModule.forRoot(ROUTES, { useHash: true }),
+    FontAwesomeModule
   ],
   providers: [
     SpotifyService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private library: FaIconLibrary) {
+    library.addIcons(faSync);
+  }
+}

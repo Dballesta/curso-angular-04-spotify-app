@@ -1,6 +1,19 @@
-<div class="card-columns">
+
+
+<ng-container *ngIf="loading; else elseTemplate">
+  <app-loading></app-loading>
+</ng-container>
+<ng-template #elseTemplate>
+  <app-tarjetas [items]="newRealeases"></app-tarjetas>
+</ng-template>
+
+
+
+
+<!-- <div class="card-columns">
   <div *ngFor="let item of newRealeases" class="card">
-    <img class="card-img-top" [src]="item.images[1].url" alt="Card image cap" />
+      [src]="item.images[1].url"
+    <img class="card-img-top" [src]="item.images | noimage" alt="Card image cap" />
     <div class="card-body">
       <h5 class="card-title">{{ item.name }}</h5>
       <p><span *ngFor="let artist of item.artists" class="badge badge-secondary">{{artist.name}}</span></p>
@@ -14,7 +27,7 @@
       </p>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- Petición simple HTTP GET
 <div class="container">

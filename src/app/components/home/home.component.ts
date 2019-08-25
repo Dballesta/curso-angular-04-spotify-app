@@ -21,11 +21,28 @@ export class HomeComponent implements OnInit {
   //     }
   //   );
   // }
+
+
+  // Sin map
+  // newRealeases: any[];
+  // constructor(private spotify: SpotifyService) {
+  //   this.spotify.getNewReleases().subscribe((data: any) => {
+  //     console.log(data);
+  //     this.newRealeases = data.albums.items;
+  //   });
+  // }
+
+
   newRealeases: any[];
+
+  loading: boolean;
+
   constructor(private spotify: SpotifyService) {
+    this.loading=true;
     this.spotify.getNewReleases().subscribe((data: any) => {
       console.log(data);
-      this.newRealeases = data.albums.items;
+      this.newRealeases = data;
+      this.loading = false;
     });
   }
 
