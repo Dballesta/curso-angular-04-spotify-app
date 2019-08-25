@@ -87,8 +87,7 @@ export class SpotifyService {
 
     return this.getQuery(query)
       .pipe(map(data => {
-        console.log(data);
-        //return data['artist'].items;
+        return data;
       }));
   }
 

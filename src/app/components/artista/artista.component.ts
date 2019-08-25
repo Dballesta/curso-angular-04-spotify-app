@@ -13,6 +13,7 @@ export class ArtistaComponent implements OnInit {
 
   idArtista: string;
   artista: any;
+  loading: boolean;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -29,7 +30,6 @@ export class ArtistaComponent implements OnInit {
       this.artista = data;
       this.loading = false;
     });
-    console.log(this.artista);
   }
 
   ngOnInit() {
