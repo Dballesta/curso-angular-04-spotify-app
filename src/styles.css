@@ -18,6 +18,12 @@ hr {
     width: 150px;
 }
 
+
+.img-song {
+  border-radius: 5%;
+  width: 100px;
+}
+
 .card-title,
 .card-text {
     color: black;
