@@ -21,6 +21,8 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faSync } from '@fortawesome/free-solid-svg-icons';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { DomSanitizerSpotifyPipe } from './pipes/dom-sanitizer-spotify.pipe';
 
 
 //Importamos las rutas
@@ -34,7 +36,9 @@ import { faSync } from '@fortawesome/free-solid-svg-icons';
     SearchComponent,
     NoimagePipe,
     TarjetasComponent,
-    LoadingComponent
+    LoadingComponent,
+    DomseguroPipe,
+    DomSanitizerSpotifyPipe
   ],
   imports: [
     BrowserModule,

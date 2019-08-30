@@ -22,9 +22,9 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row m-5">
     <div class="col-12">
-      <table class="table-dark col-11 m-5">
+      <table class="table-dark col-11 ">
         <thead>
           <tr>
             <th scope="col">Foto</th>
@@ -35,10 +35,11 @@
         </thead>
         <tbody *ngFor="let track of topTracks">
           <tr>
-            <td scope="row"><img [src]="track.album.images | noimage" class="img-song" alt=""></td>
-            <td scope="row">{{track.album.name}}</td>
-            <td scope="row">{{track.name}}</td>
-            <td scope="row"><a [href]="track.preview_url">Ir al preview</a> </td>
+            <td><img [src]="track.album.images | noimage" class="img-song" alt=""></td>
+            <td>{{track.album.name}}</td>
+            <td>{{track.name}}</td>
+            <td scope="row"><iframe [src]="track.uri | domSanitizerSpotify" width="300" height="80" frameborder="0"
+                allowtransparency="true" allow="encrypted-media"></iframe></td>
           </tr>
         </tbody>
       </table>
